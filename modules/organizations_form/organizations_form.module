@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Organizations Form feature.
+ */
+
+include_once('organizations_form.features.inc');
