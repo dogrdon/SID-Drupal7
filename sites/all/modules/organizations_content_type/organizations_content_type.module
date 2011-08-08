@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Organizations Content Type feature.
- */
-
-include_once('organizations_content_type.features.inc');
