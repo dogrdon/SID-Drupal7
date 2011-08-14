@@ -1,0 +1,25 @@
+From 5dab3da7c329861b13342e0bf39932a14be8f0ed Mon Sep 17 00:00:00 2001
+From: Brandon Bergren <bdragon@rtk0.net>
+Date: Sat, 2 Apr 2011 14:33:38 -0500
+Subject: [PATCH] Fix #1019832, reported by radoeka: Fix notice & data loss issue when other code does a user_save().
+
+---
+ masquerade.module |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/masquerade.module b/masquerade.module
+index 9d68c42..d36db7c 100644
+--- a/masquerade.module
++++ b/masquerade.module
+@@ -435,7 +435,7 @@ function masquerade_user_submit(&$form, $form_state) {
+  */
+ function masquerade_user_update(&$edit, $account, $category) {
+   global $_masquerade_old_session_id;
+-  if ($category == 'account') {
++  if ($category == 'account' && isset($edit['masquerade_users'])) {
+     $query = db_delete('masquerade_users');
+     $query->condition('uid_from', $account->uid);
+     $query->execute();
+-- 
+1.7.3.4
+

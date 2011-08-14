@@ -435,7 +435,7 @@ function masquerade_user_submit(&$form, $form_state) {
  */
 function masquerade_user_update(&$edit, $account, $category) {
   global $_masquerade_old_session_id;
-  if ($category == 'account') {
+  if ($category == 'account' && isset($edit['masquerade_users'])) {
     $query = db_delete('masquerade_users');
     $query->condition('uid_from', $account->uid);
     $query->execute();
