@@ -20,6 +20,13 @@ ini_set('display_startup_errors', TRUE);
 /**
  * Root directory of Drupal installation.
  */
+ 
+if ( !extension_loaded( 'mysql' )) {
+ if ( !dl( 'mysql.so' )) {
+     exit( 'Cannot load mysql extension.' );
+ }
+}
+ 
 define('DRUPAL_ROOT', getcwd());
 
 require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
