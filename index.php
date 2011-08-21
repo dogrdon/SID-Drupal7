@@ -26,6 +26,14 @@ if ( !extension_loaded( 'mysql' )) {
      exit( 'Cannot load mysql extension.' );
  }
 }
+
+if ( !extension_loaded( 'pdo' )) {
+  dl( 'pdo.so' ); 
+}
+
+if ( !extension_loaded( 'pdo_mysql' )) {
+  dl( 'pdo_mysql.so' ); 
+}
  
 define('DRUPAL_ROOT', getcwd());
 
