@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Organization_Feature feature.
- */
-
-include_once('organization_feature.features.inc');
