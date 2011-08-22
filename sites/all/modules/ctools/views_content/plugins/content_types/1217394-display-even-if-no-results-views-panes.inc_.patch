@@ -1,0 +1,38 @@
+diff --git a/www/sites/all/modules/contrib/ctools/views_content/plugins/content_types/views_panes.inc b/www/sites/all/modules/contrib/ctools/views_content/plugins/content_types/views_panes.inc
+index f1ccd1a..c63d537 100644
+--- a/www/sites/all/modules/contrib/ctools/views_content/plugins/content_types/views_panes.inc
++++ b/www/sites/all/modules/contrib/ctools/views_content/plugins/content_types/views_panes.inc
+@@ -287,10 +287,31 @@ function views_content_views_panes_content_type_render($subtype, $conf, $panel_a
+   }
+ 
+   $stored_feeds = drupal_add_feed();
+-
+   $block->content = $view->preview();
+   if (empty($view->result) && !$view->display_handler->get_option('empty') && empty($view->style_plugin->definition['even empty'])) {
+-    return;
++    // Retrieve the view header and footer.
++    $view_header = $view->display_handler->get_option('header');
++    $view_footer = $view->display_handler->get_option('footer');
++    $return = TRUE;
++    if (!empty($view_header)) {
++      foreach ($view_header as $vh) {
++        if (!empty($vh['empty'])) {
++          $return = FALSE;
++          break;
++        }
++      }
++    }
++    if (!empty($view_footer) && $return) {
++      foreach ($view_footer as $vf) {
++        if (!empty($vf['empty'])) {
++          $return = FALSE;
++          break;
++        }
++      }
++    }
++    if ($return) {
++      return;
++    }
+   }
+ 
+   $block->title = $view->get_title();
