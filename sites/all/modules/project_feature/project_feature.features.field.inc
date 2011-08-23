@@ -80,7 +80,7 @@ function project_feature_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -146,7 +146,7 @@ function project_feature_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '8',
       ),
     ),
   );
@@ -212,7 +212,7 @@ function project_feature_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '19',
+        'weight' => '21',
       ),
     ),
   );
@@ -278,7 +278,7 @@ function project_feature_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '12',
       ),
     ),
   );
@@ -344,7 +344,7 @@ function project_feature_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '7',
+        'weight' => '9',
       ),
     ),
   );
@@ -412,7 +412,73 @@ function project_feature_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '12',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-projects-field_proj_review_status'
+  $fields['node-projects-field_proj_review_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_proj_review_status',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes - okay to publish',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'projects',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 18,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_proj_review_status',
+      'label' => 'Reviewed?',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '0',
       ),
     ),
   );
@@ -478,7 +544,7 @@ function project_feature_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -544,7 +610,7 @@ function project_feature_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '9',
+        'weight' => '11',
       ),
     ),
   );
@@ -612,7 +678,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -678,7 +744,89 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '4',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-projects-field_project_org'
+  $fields['node-projects-field_project_org'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_project_org',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'article' => 0,
+          'blog' => 0,
+          'page' => 0,
+          'panel' => 0,
+          'partners' => 'partners',
+          'projects' => 0,
+          'technical_support_request' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'projects',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Please enter the Name of your Organization as you have registered it with this site',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 17,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_project_org',
+      'label' => 'Organization',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'size' => '60',
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '2',
       ),
     ),
   );
@@ -744,7 +892,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '2',
         ),
         'type' => 'text_textarea',
-        'weight' => '8',
+        'weight' => '10',
       ),
     ),
   );
@@ -810,7 +958,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '17',
+        'weight' => '19',
       ),
     ),
   );
@@ -876,7 +1024,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '16',
+        'weight' => '18',
       ),
     ),
   );
@@ -942,7 +1090,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'rows' => '1',
         ),
         'type' => 'text_textarea',
-        'weight' => '18',
+        'weight' => '20',
       ),
     ),
   );
@@ -1010,7 +1158,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '14',
+        'weight' => '16',
       ),
     ),
   );
@@ -1074,7 +1222,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '17',
       ),
     ),
   );
@@ -1142,7 +1290,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '13',
+        'weight' => '15',
       ),
     ),
   );
@@ -1164,8 +1312,10 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
   t('Location of Project');
   t('Minimum Intern Qualifications');
   t('New or Existing Project');
+  t('Organization');
   t('Please describe how often the primary supervisor will meet with the student to discuss the work and progress on the project?  (e.g.  daily, weekly, bi-weekly)');
   t('Please describe the minimum qualifications needed by students.  Is there any special knowledge or skills student members should possess (i.e. foreign language proficiency)?');
+  t('Please enter the Name of your Organization as you have registered it with this site');
   t('Please provide and executive summary of the project (1-2 paragraphs maximum).');
   t('Primary Supervisor');
   t('Primary location of the work: [if different from main address above.]');
@@ -1175,6 +1325,7 @@ Note: this does not need to be an extensive, research-based need statement.  Ple
   t('Project Importance');
   t('Project Timeline');
   t('Relevant Supervisor Experience');
+  t('Reviewed?');
   t('Role in Project Proposal');
   t('Supervisor Availability');
   t('Supervisor Email');

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SID-Roles feature.
+ */
+
+include_once('sid_roles.features.inc');

@@ -49,7 +49,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 8,
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -73,7 +73,7 @@ function partners_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -150,7 +150,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 11,
+          'weight' => '11',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -171,7 +171,7 @@ function partners_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -212,7 +212,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 16,
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -233,7 +233,7 @@ function partners_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '15',
       ),
     ),
   );
@@ -277,7 +277,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 7,
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -300,7 +300,7 @@ function partners_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => '0',
+        'weight' => '1',
       ),
     ),
   );
@@ -342,7 +342,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 14,
+          'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -366,7 +366,7 @@ function partners_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -413,7 +413,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -434,7 +434,7 @@ function partners_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -476,7 +476,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 13,
+          'weight' => '13',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -500,7 +500,7 @@ function partners_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -541,7 +541,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 10,
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -562,7 +562,7 @@ function partners_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -604,7 +604,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 4,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -672,12 +672,12 @@ function partners_field_default_fields() {
           'form' => array(
             'fields' => array(
               'additional' => array(
-                'collect' => '2',
+                'collect' => '4',
                 'default' => '',
                 'weight' => '6',
               ),
               'city' => array(
-                'collect' => '2',
+                'collect' => '4',
                 'default' => '',
                 'weight' => '8',
               ),
@@ -687,7 +687,7 @@ function partners_field_default_fields() {
                 'weight' => '14',
               ),
               'locpick' => array(
-                'collect' => '4',
+                'collect' => '0',
                 'weight' => '20',
               ),
               'name' => array(
@@ -696,22 +696,22 @@ function partners_field_default_fields() {
                 'weight' => '2',
               ),
               'phone' => array(
-                'collect' => '2',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '25',
               ),
               'postal_code' => array(
-                'collect' => '2',
+                'collect' => '4',
                 'default' => '',
                 'weight' => '12',
               ),
               'province' => array(
-                'collect' => '2',
+                'collect' => '4',
                 'default' => '',
                 'weight' => '10',
               ),
               'street' => array(
-                'collect' => '2',
+                'collect' => '4',
                 'default' => '',
                 'weight' => '4',
               ),
@@ -732,8 +732,8 @@ function partners_field_default_fields() {
           'label' => 'above',
           'module' => 'location_cck',
           'settings' => array(),
-          'type' => 'location_default',
-          'weight' => 2,
+          'type' => 'location_all',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -754,7 +754,7 @@ function partners_field_default_fields() {
         'module' => 'location_cck',
         'settings' => array(),
         'type' => 'location',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -813,7 +813,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -875,7 +875,7 @@ function partners_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 9,
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -896,7 +896,72 @@ function partners_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '4',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-partners-field_review_status'
+  $fields['node-partners-field_review_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_review_status',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'No',
+          1 => 'Yes - okay to publish',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'partners',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Has this submission been reviewed and approved for publishing to the website?',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '17',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_review_status',
+      'label' => 'Reviewed?',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => 0,
       ),
     ),
   );
@@ -938,7 +1003,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 5,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1006,7 +1071,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1030,7 +1095,7 @@ function partners_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '-1',
+        'weight' => '0',
       ),
     ),
   );
@@ -1072,7 +1137,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 12,
+          'weight' => '12',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1096,7 +1161,7 @@ function partners_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -1140,7 +1205,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1164,7 +1229,7 @@ function partners_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '-2',
+        'weight' => '-1',
       ),
     ),
   );
@@ -1206,7 +1271,7 @@ function partners_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 15,
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1230,7 +1295,7 @@ function partners_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -1243,6 +1308,7 @@ function partners_field_default_fields() {
   t('Computer Access');
   t('Describe the work space you will provide an intern. ');
   t('Does your organization have any requirements for hosting student interns (police clearance, specific immunizations, for instance)?');
+  t('Has this submission been reviewed and approved for publishing to the website?');
   t('Hosting Requirements');
   t('How many staff (full time and/or part time) does your organization employ?');
   t('Ideal Intern Schedule');
@@ -1257,6 +1323,7 @@ function partners_field_default_fields() {
   t('Organization Mission');
   t('Physical Address');
   t('Primary telephone contact');
+  t('Reviewed?');
   t('Staff Information');
   t('Telephone');
   t('Transportation Options');
