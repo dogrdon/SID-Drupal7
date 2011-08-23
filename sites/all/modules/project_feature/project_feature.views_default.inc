@@ -30,49 +30,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'type' => 'type',
-    'title' => 'title',
-    'name' => 'name',
-    'comment_count' => 'comment_count',
-    'last_comment_timestamp' => 'last_comment_timestamp',
-    'timestamp' => 'title',
-    'new_comments' => 'comment_count',
-  );
-  $handler->display->display_options['style_options']['default'] = 'last_comment_timestamp';
-  $handler->display->display_options['style_options']['info'] = array(
-    'type' => array(
-      'sortable' => 1,
-      'separator' => '',
-    ),
-    'title' => array(
-      'sortable' => 1,
-      'separator' => '&nbsp;',
-    ),
-    'name' => array(
-      'sortable' => 1,
-      'separator' => '',
-    ),
-    'comment_count' => array(
-      'sortable' => 1,
-      'separator' => '<br />',
-    ),
-    'last_comment_timestamp' => array(
-      'sortable' => 1,
-      'separator' => '&nbsp;',
-    ),
-    'timestamp' => array(
-      'separator' => '',
-    ),
-    'new_comments' => array(
-      'separator' => '',
-    ),
-  );
-  $handler->display->display_options['style_options']['override'] = 1;
-  $handler->display->display_options['style_options']['order'] = 'desc';
-=======
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Text area */
@@ -93,7 +50,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href=<?php echo url(\'node/add/projects\'); ?>>+Add a new project </a>';
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['footer']['area']['tokenize'] = 0;
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -102,8 +58,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-=======
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
@@ -123,7 +77,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
   /* Sort criterion: Content: Last comment time */
   $handler->display->display_options['sorts']['last_comment_timestamp']['id'] = 'last_comment_timestamp';
   $handler->display->display_options['sorts']['last_comment_timestamp']['table'] = 'node_comment_statistics';
@@ -148,11 +101,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'projects' => 'projects',
-  );
-=======
   $handler->display->display_options['filters']['type']['operator'] = 'empty';
   $handler->display->display_options['filters']['type']['value'] = array(
     'projects' => 'projects',
@@ -164,7 +112,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'projects' => 'projects',
   );
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -177,8 +124,6 @@ function project_feature_views_default_views() {
   $export['my_projects'] = $view;
 
   $view = new view;
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-=======
   $view->name = 'needs_review';
   $view->description = '';
   $view->tag = 'default';
@@ -257,7 +202,6 @@ function project_feature_views_default_views() {
   $export['needs_review'] = $view;
 
   $view = new view;
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
   $view->name = 'project_directory';
   $view->description = 'Quick showing of newest projects in the system';
   $view->tag = 'default';
@@ -321,16 +265,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-=======
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -338,8 +272,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'projects' => 'projects',
   );
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-=======
   /* Filter criterion: Content: Reviewed? (field_proj_review_status) */
   $handler->display->display_options['filters']['field_proj_review_status_value']['id'] = 'field_proj_review_status_value';
   $handler->display->display_options['filters']['field_proj_review_status_value']['table'] = 'field_data_field_proj_review_status';
@@ -347,7 +279,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['filters']['field_proj_review_status_value']['value'] = array(
     1 => '1',
   );
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -366,8 +297,6 @@ function project_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $export['project_directory'] = $view;
 
-<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.views_default.inc
-=======
   $view = new view;
   $view->name = 'projects_by_partner';
   $view->description = '';
@@ -507,6 +436,5 @@ function project_feature_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $export['projects_front_page'] = $view;
 
->>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.views_default.inc
   return $export;
 }
