@@ -1,6 +1,10 @@
 core = "7.x"
 dependencies[] = "features"
 dependencies[] = "list"
+<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.info
+=======
+dependencies[] = "node_reference"
+>>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.info
 dependencies[] = "views"
 description = "Project Content Type Feature"
 features[ctools][] = "views:views_default:3.0"
@@ -10,10 +14,12 @@ features[field][] = "node-projects-field_backup_supervisor"
 features[field][] = "node-projects-field_min_intern_req"
 features[field][] = "node-projects-field_new_exist_project"
 features[field][] = "node-projects-field_primary_supervisor"
+features[field][] = "node-projects-field_proj_review_status"
 features[field][] = "node-projects-field_project_goals"
 features[field][] = "node-projects-field_project_impact"
 features[field][] = "node-projects-field_project_import"
 features[field][] = "node-projects-field_project_location"
+features[field][] = "node-projects-field_project_org"
 features[field][] = "node-projects-field_project_timeline"
 features[field][] = "node-projects-field_relevant_super_experience"
 features[field][] = "node-projects-field_role_proj_proposal"
@@ -23,7 +29,14 @@ features[field][] = "node-projects-field_supervisor_fulltime"
 features[field][] = "node-projects-field_supervisor_telephone"
 features[node][] = "projects"
 features[views_view][] = "my_projects"
+<<<<<<< HEAD:sites/all/modules/project_feature/project_feature.info
 features[views_view][] = "project_directory"
+=======
+features[views_view][] = "needs_review"
+features[views_view][] = "project_directory"
+features[views_view][] = "projects_by_partner"
+features[views_view][] = "projects_front_page"
+>>>>>>> 356d1df1335c0b5a266366e36f084877016f5de6:sites/all/modules/project_feature/project_feature.info
 name = "Project_Feature"
 package = "Features"
 php = "5.2.4"
