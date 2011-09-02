@@ -1,6 +1,5 @@
 <?php
 
-<?php
 function sid_theme_form_element($variables) {
   $element = &$variables['element'];
   // This is also used in the installer, pre-database setup.
