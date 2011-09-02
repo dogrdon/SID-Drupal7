@@ -1,32 +1,78 @@
 <?php
 
-/**
-* Replacement for theme_webform_element() to enable descriptions to come BEFORE the field to be filled out.
-*/
-function sid_webform_element($variables) {
-  $element = $variables['element'];
-  $value = $variables['element']['#children'];
+<?php
+function sid_theme_form_element($variables) {
+  $element = &$variables['element'];
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
 
-  $wrapper_classes = array(
-    'form-item',
+  // This function is invoked as theme wrapper, but the rendered form element
+  // may not necessarily have been processed by form_builder().
+  $element += array(
+    '#title_display' => 'before',
   );
-  $output = '<div class="' . implode(' ', $wrapper_classes) . '" id="' . $element['#id'] . '-wrapper">' . "\n";
-  $required = !empty($element['#required']) ? '<span class="form-required" title="' . t('This field is required.') . '">*</span>' : '';
 
-  if (!empty($element['#title'])) {
-    $title = $element['#title'];
-    $output .= ' <label for="' . $element['#id'] . '">' . t('!title: !required', array('!title' => filter_xss_admin($title), '!required' => $required)) . "</label>\n";
+  // Add element #id for #type 'item'.
+  if (isset($element['#markup']) && !empty($element['#id'])) {
+    $attributes['id'] = $element['#id'];
+  }
+  // Add element's #type and #name as class to aid with JS/CSS selectors.
+  $attributes['class'] = array('form-item');
+  if (!empty($element['#type'])) {
+    $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
+  }
+  if (!empty($element['#name'])) {
+    $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
+  }
+  // Add a class for disabled elements to facilitate cross-browser styling.
+  if (!empty($element['#attributes']['disabled'])) {
+    $attributes['class'][] = 'form-disabled';
+  }
+  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+  switch ($element['#title_display']) {
+    case 'before':
+    case 'invisible':
+      $output .= ' ' . theme('form_element_label', $variables);
+	  if (!empty($element['#description'])) {
+	    $output .= '<div class="description">' . $element['#description'] . "</div>\n";
+	  }
+
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+
+    case 'after':
+      $output .= ' ' . $prefix . $element['#children'] . $suffix;
+	  if (!empty($element['#description'])) {
+	    $output .= '<div class="description">' . $element['#description'] . "</div>\n";
+	  }
+
+      $output .= ' ' . theme('form_element_label', $variables) . "\n";
+      break;
+
+    case 'none':
+    case 'attribute':
+      // Output no label and no required marker, only the children.
+
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
   }
 
-  if (!empty($element['#description'])) {
-    $output .= ' <div class="description">' . $element['#description'] . "</div>\n";
-  }
-
-  $output .= '<div id="' . $element['#id'] . '">' . $value . '</div>' . "\n";
+  //if (!empty($element['#description'])) {
+  //  $output .= '<div class="description">' . $element['#description'] . "</div>\n";
+  //}
 
   $output .= "</div>\n";
 
   return $output;
 }
+?>
 
 ?>
