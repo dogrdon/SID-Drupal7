@@ -479,36 +479,40 @@ function file_ensure_htaccess() {
  *   The default is TRUE which indicates a private and protected directory.
  */
 function file_create_htaccess($directory, $private = TRUE) {
-  if (file_uri_scheme($directory)) {
-    $directory = file_stream_wrapper_uri_normalize($directory);
-  }
-  else {
-    $directory = rtrim($directory, '/\\');
-  }
-  $htaccess_path =  $directory . '/.htaccess';
+if (file_uri_scheme($directory)) {
+$directory = file_stream_wrapper_uri_normalize($directory);
+}
+else {
+$directory = rtrim($directory, '/\\');
+}
+$htaccess_path = $directory . '/.htaccess';
 
-  if (file_exists($htaccess_path)) {
-    // Short circuit if the .htaccess file already exists.
-    return;
-  }
+if (file_exists($htaccess_path)) {
+// Short circuit if the .htaccess file already exists.
+return;
+}
 
-  if ($private) {
-    // Private .htaccess file.
-    $htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\nDeny from all\nOptions None\nOptions +FollowSymLinks";
-  }
-  else {
-    // Public .htaccess file.
-    $htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\nOptions None\nOptions +FollowSymLinks";
-  }
+if ($private) {
+// Private .htaccess file.
+/* $htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\nDeny from all\nOptions None\nOptions +FollowSymLinks"; */
+$htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\n#Deny from all\n#Options None\n#Options +FollowSymLinks";
+}
+else {
+// Public .htaccess file.
+/* $htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\nOptions None\nOptions +FollowSymLinks"; */
+$htaccess_lines = "SetHandler Drupal_Security_Do_Not_Remove_See_SA_2006_006\n#Options None\n#Options +FollowSymLinks";
+}
 
-  // Write the .htaccess file.
-  if (file_put_contents($htaccess_path, $htaccess_lines)) {
-    drupal_chmod($htaccess_path, 0444);
-  }
-  else {
-    $variables = array('%directory' => $directory, '!htaccess' => '<br />' . nl2br(check_plain($htaccess_lines)));
-    watchdog('security', "Security warning: Couldn't write .htaccess file. Please create a .htaccess file in your %directory directory which contains the following lines: <code>!htaccess</code>", $variables, WATCHDOG_ERROR);
-  }
+// Write the .htaccess file.
+if (file_put_contents($htaccess_path, $htaccess_lines)) {
+/* drupal_chmod($htaccess_path, 0444); */
+drupal_chmod($htaccess_path, 0707);
+}
+else {
+$variables = array('%directory' => $directory, '!htaccess' => '
+' . nl2br(check_plain($htaccess_lines)));
+watchdog('security', "Security warning: Couldn't write .htaccess file. Please create a .htaccess file in your %directory directory which contains the following lines: !htaccess", $variables, WATCHDOG_ERROR);
+}
 }
 
 /**
