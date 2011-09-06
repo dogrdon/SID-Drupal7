@@ -1,6 +1,6 @@
 <?php
 
-function sid_theme_form_element($variables) {
+function sid_form_element($variables) {
   $element = &$variables['element'];
   // This is also used in the installer, pre-database setup.
   $t = get_t();
@@ -72,6 +72,5 @@ function sid_theme_form_element($variables) {
 
   return $output;
 }
-?>
 
 ?>
